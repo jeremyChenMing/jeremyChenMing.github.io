@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="一、基础先来介绍一下声明周期的定义1) componentWillMount(){}123// Mounting  安装阶段 // 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用setState，// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。 12// Mounting  安装阶段// setTimeout  setInterval   AJAX">
+<meta name="description" content="一、基础先来介绍一下生命周期的定义1) componentWillMount(){}123// Mounting  安装阶段 // 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用setState，// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。 12// Mounting  安装阶段// setTimeout  setInterval   AJAX">
 <meta name="keywords" content="REACT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-lifeCycle">
 <meta property="og:url" content="http://yoursite.com/2017/04/13/react-lifeCycle/index.html">
 <meta property="og:site_name" content="Jeremy's blog">
-<meta property="og:description" content="一、基础先来介绍一下声明周期的定义1) componentWillMount(){}123// Mounting  安装阶段 // 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用setState，// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。 12// Mounting  安装阶段// setTimeout  setInterval   AJAX">
-<meta property="og:updated_time" content="2017-04-13T03:46:16.000Z">
+<meta property="og:description" content="一、基础先来介绍一下生命周期的定义1) componentWillMount(){}123// Mounting  安装阶段 // 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用setState，// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。 12// Mounting  安装阶段// setTimeout  setInterval   AJAX">
+<meta property="og:updated_time" content="2017-04-13T07:48:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-lifeCycle">
-<meta name="twitter:description" content="一、基础先来介绍一下声明周期的定义1) componentWillMount(){}123// Mounting  安装阶段 // 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用setState，// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。 12// Mounting  安装阶段// setTimeout  setInterval   AJAX">
+<meta name="twitter:description" content="一、基础先来介绍一下生命周期的定义1) componentWillMount(){}123// Mounting  安装阶段 // 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用setState，// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。 12// Mounting  安装阶段// setTimeout  setInterval   AJAX">
 
 
 
@@ -427,7 +427,7 @@
       
 
       
-        <h1 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h1><h2 id="先来介绍一下声明周期的定义"><a href="#先来介绍一下声明周期的定义" class="headerlink" title="先来介绍一下声明周期的定义"></a>先来介绍一下声明周期的定义</h2><h2 id="1-componentWillMount"><a href="#1-componentWillMount" class="headerlink" title="1) componentWillMount(){}"></a>1) componentWillMount(){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段 </div><div class="line">// 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用<span class="built_in">set</span>State，</div><div class="line">// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。</div></pre></td></tr></table></figure>
+        <h1 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h1><h2 id="先来介绍一下生命周期的定义"><a href="#先来介绍一下生命周期的定义" class="headerlink" title="先来介绍一下生命周期的定义"></a>先来介绍一下生命周期的定义</h2><h2 id="1-componentWillMount"><a href="#1-componentWillMount" class="headerlink" title="1) componentWillMount(){}"></a>1) componentWillMount(){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段 </div><div class="line">// 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用<span class="built_in">set</span>State，</div><div class="line">// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段</div><div class="line">// setTimeout  setInterval   AJAX 在此之行，强烈建议 </div></pre></td></tr></table></figure>
 <h2 id="2-componentDidMount"><a href="#2-componentDidMount" class="headerlink" title="2)componentDidMount(){}"></a>2)componentDidMount(){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段 </div><div class="line">// 调用一次，只在客户端（不在服务器上），在初始渲染发生后立即</div><div class="line">// 子组件的componentDidMount（）方法在父组件的componentDidMount（）方法之前被调用</div><div class="line">// <span class="built_in">set</span>Timeout  <span class="built_in">set</span>Interval   AJAX 在此之行，强烈建议</div></pre></td></tr></table></figure>
 <h2 id="3-componentWillReceiveProps-nextProps"><a href="#3-componentWillReceiveProps-nextProps" class="headerlink" title="3)componentWillReceiveProps(nextProps){}"></a>3)componentWillReceiveProps(nextProps){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Updating 更新阶段</div><div class="line">// 在组件接收新props时调用。初始渲染不调用此方法。</div><div class="line">// 老的props可以用this.props  新值就用nextProps查看</div><div class="line">// 在此函数中调用this.setState（）不会触发附加的渲染。</div></pre></td></tr></table></figure>
@@ -619,7 +619,7 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/" target="_blank" title="GitHub">
+                <a href="https://github.com/jeremyChenMing/" target="_blank" title="GitHub">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -628,7 +628,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/u/5721392726/home?wvr=5" target="_blank" title="Weibo">
+                <a href="http://weibo.com/u/5721392726?refer_flag=1001030201_&is_all=1" target="_blank" title="Weibo">
                   
                     <i class="fa fa-fw fa-weibo"></i>
                   
@@ -669,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、基础"><span class="nav-number">1.</span> <span class="nav-text">一、基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先来介绍一下声明周期的定义"><span class="nav-number">1.1.</span> <span class="nav-text">先来介绍一下声明周期的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-componentWillMount"><span class="nav-number">1.2.</span> <span class="nav-text">1) componentWillMount(){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-componentDidMount"><span class="nav-number">1.3.</span> <span class="nav-text">2)componentDidMount(){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-componentWillReceiveProps-nextProps"><span class="nav-number">1.4.</span> <span class="nav-text">3)componentWillReceiveProps(nextProps){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-shouldComponentUpdate-nextProps-nextState"><span class="nav-number">1.5.</span> <span class="nav-text">4)shouldComponentUpdate(nextProps, nextState){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-componentWillUpdate-nextProps-nextState"><span class="nav-number">1.6.</span> <span class="nav-text">5) componentWillUpdate(nextProps, nextState){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-componentDidUpdate-nextProps-nextState"><span class="nav-number">1.7.</span> <span class="nav-text">6)componentDidUpdate(nextProps, nextState){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-componentWillUnmount"><span class="nav-number">1.8.</span> <span class="nav-text">7)componentWillUnmount(){}</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、生命周期的执行顺序"><span class="nav-number">2.</span> <span class="nav-text">二、生命周期的执行顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、总结"><span class="nav-number">3.</span> <span class="nav-text">三、总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、基础"><span class="nav-number">1.</span> <span class="nav-text">一、基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先来介绍一下生命周期的定义"><span class="nav-number">1.1.</span> <span class="nav-text">先来介绍一下生命周期的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-componentWillMount"><span class="nav-number">1.2.</span> <span class="nav-text">1) componentWillMount(){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-componentDidMount"><span class="nav-number">1.3.</span> <span class="nav-text">2)componentDidMount(){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-componentWillReceiveProps-nextProps"><span class="nav-number">1.4.</span> <span class="nav-text">3)componentWillReceiveProps(nextProps){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-shouldComponentUpdate-nextProps-nextState"><span class="nav-number">1.5.</span> <span class="nav-text">4)shouldComponentUpdate(nextProps, nextState){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-componentWillUpdate-nextProps-nextState"><span class="nav-number">1.6.</span> <span class="nav-text">5) componentWillUpdate(nextProps, nextState){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-componentDidUpdate-nextProps-nextState"><span class="nav-number">1.7.</span> <span class="nav-text">6)componentDidUpdate(nextProps, nextState){}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-componentWillUnmount"><span class="nav-number">1.8.</span> <span class="nav-text">7)componentWillUnmount(){}</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、生命周期的执行顺序"><span class="nav-number">2.</span> <span class="nav-text">二、生命周期的执行顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、总结"><span class="nav-number">3.</span> <span class="nav-text">三、总结</span></a></li></ol></div>
             
 
           </div>
