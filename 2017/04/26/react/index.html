@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, jeremychen, jeremy, 陈明" />
+  <meta name="keywords" content="REACT," />
 
 
 
@@ -87,15 +87,17 @@
 
 
 
-<meta name="description" content="记录自己这一路的遇到！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jeremy's blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="原由：写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种(createClass, component, PureComponet,Stateless Functional Component)，启发来自于不知的博客呀，有兴趣的人可以去看看他的博客！ 叙述： 我们在用react的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做">
+<meta name="keywords" content="REACT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react创建组建的四种方式">
+<meta property="og:url" content="http://yoursite.com/2017/04/26/react/index.html">
 <meta property="og:site_name" content="Jeremy's blog">
-<meta property="og:description" content="记录自己这一路的遇到！">
+<meta property="og:description" content="原由：写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种(createClass, component, PureComponet,Stateless Functional Component)，启发来自于不知的博客呀，有兴趣的人可以去看看他的博客！ 叙述： 我们在用react的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做">
+<meta property="og:updated_time" content="2017-04-26T09:41:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeremy's blog">
-<meta name="twitter:description" content="记录自己这一路的遇到！">
+<meta name="twitter:title" content="react创建组建的四种方式">
+<meta name="twitter:description" content="原由：写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种(createClass, component, PureComponet,Stateless Functional Component)，启发来自于不知的博客呀，有兴趣的人可以去看看他的博客！ 叙述： 我们在用react的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/26/react/"/>
 
 
 
 
 
-  <title> Jeremy's blog </title>
+  <title> react创建组建的四种方式 | Jeremy's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -173,9 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -312,9 +312,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -344,10 +344,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/26/react/" itemprop="url">
-                  react创建组建的四种方式
-                </a>
+                react创建组建的四种方式
               
             
           </h1>
@@ -398,6 +395,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/04/26/react/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -420,354 +427,101 @@
       
 
       
-        
-          <p><strong><em>原由：</em></strong>写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种<code>(createClass, component, PureComponet,Stateless Functional Component)</code>，启发来自于<a href="http://www.cnblogs.com/Unknw/p/6431375.html">不知</a>的博客呀，有兴趣的人可以去看看他的博客！</p>
+        <p><strong><em>原由：</em></strong>写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种<code>(createClass, component, PureComponet,Stateless Functional Component)</code>，启发来自于<a href="http://www.cnblogs.com/Unknw/p/6431375.html" target="_blank" rel="external">不知</a>的博客呀，有兴趣的人可以去看看他的博客！</p>
 <p><strong><em>叙述：</em></strong> 我们在用<code>react</code>的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做过了一个<code>react</code>的项目，目前依旧在继续，一上来我们就使用了<code>es6</code>的语法堂，用<code>component</code>来，仔细看过官方文档后，发现不用es6语法的同时只能使用<code>createClass</code>。在写组建的同时我们也都会说到这两个词语，状态组建和<code>pure</code>组建（纯函数）。今天就来大概介绍一下各自的特点：</p>
 <h2 id="一、createClass"><a href="#一、createClass" class="headerlink" title="一、createClass"></a>一、createClass</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">var React = require(&quot;react&quot;);</div><div class="line">var FirstComponent = React.createClass(&#123;</div><div class="line">  propTypes: &#123;</div><div class="line">    name: React.PropTypes.string </div><div class="line">    //属性校验 (string, number, bool, func, array, object...... )</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  getDefaultProps: function() &#123;</div><div class="line">    return &#123;</div><div class="line">      name: &apos;Mary&apos; </div><div class="line">    &#125;;</div><div class="line">    // 初始化props</div><div class="line">  &#125;, </div><div class="line">    </div><div class="line">  getInitialState: function() &#123;</div><div class="line">    return &#123;count: this.props.initialCount&#125;; </div><div class="line">    //初始化props</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  handleClick: function() &#123;</div><div class="line">    //.....</div><div class="line">  &#125;,</div><div class="line">  render: function() &#123;</div><div class="line">    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">module.exports = FirstComponent;</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/26/react/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+<a id="more"></a>
+<blockquote>
+<p>这种方式下，组件的<code>props、state</code>等都是以对象<code>object</code>属性的方式组合在一起，在<code>createClass</code>中，<code>React</code>对属性中的所有函数都进行了<code>this</code>绑定，也就是如上面的<code>hanleClick</code>其实相当于<code>handleClick.bind(this)</code> 。</p>
+</blockquote>
+<h2 id="二、component-es6语法堂"><a href="#二、component-es6语法堂" class="headerlink" title="二、component es6语法堂"></a>二、component es6语法堂</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">class FirstComponent extends React.Component &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.handleClick = this.handleClick.bind(this);</div><div class="line">    this.state = &#123;</div><div class="line">       count: props.initialCount</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  static propTypes ＝ &#123;</div><div class="line">    name: React.PropTypes.string</div><div class="line">  &#125;</div><div class="line">  statice props = &#123;</div><div class="line">    name: &apos;Mary&apos;</div><div class="line">  &#125;</div><div class="line">  handleClick() &#123;</div><div class="line">    //点击事件的处理函数</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render() &#123;</div><div class="line">    return &lt;h1 onClick=&#123;this.handleClick&#125;&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">export default FirstComponent;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这段代码指定了<code>FirstComponent</code>继承<code>extends React.Component</code>的属性，通过<code>constructor</code>来构函数，初始化<code>state，this</code>的绑定也在这里面进行，因为这种方式<code>react</code>并没有对<code>this</code>进行绑定，所有需要手动输入绑定。这种方法创建组建因为继承了<code>component</code>的属性，因此这里面可以写<code>react</code>的所有生命周期函数,例如<code>componentDidMount</code>等系列，并在函数内容通过<code>this.state</code>来改变状态<code>state</code>，<code>dom</code>就会随即刷新，也可以手动静止更新，具体的细节是在某个生命周期中进行，具体的可以看看我的<a href="https://segmentfault.com/a/1190000008715491" target="_blank" rel="external">这篇文章</a></p>
+</blockquote>
+<h2 id="三、PureComponet"><a href="#三、PureComponet" class="headerlink" title="三、PureComponet"></a>三、PureComponet</h2><p>上面的方法中都不是纯函数的构造，因为<code>state</code>是可以在内容起到作用的，内容就可以控制是否重新渲染状态。<br>而这种方法我也很少用过，看过很多文章才明白！其实大多数情况下我们也很难用到这样的方式，在官网的位置都不是很起眼，所以就大概复述一下－不知－博客的内容吧！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class CounterButton extends React.PureComponent &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123;count: 1&#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;button</div><div class="line">        color=&#123;this.props.color&#125;</div><div class="line">        onClick=&#123;() =&gt; this.setState(state =&gt; (&#123;count: state.count + 1&#125;))&#125;&gt;</div><div class="line">        Count: &#123;this.state.count&#125;</div><div class="line">      &lt;/button&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>大多数情况下， 我们使用<code>PureComponent</code>能够简化我们的代码，并且提高性能，但是PureComponent的自动为我们添加的<code>shouldComponentUpate</code>函数，只是对<code>props</code>和<code>state</code>进行浅比较<code>(shadow comparison)</code>，当<code>props</code>或者<code>state</code>本身是嵌套对象或数组等时，浅比较并不能得到预期的结果，这会导致实际的<code>props</code>和<code>state</code>发生了变化，但组件却没有更新的问题。当然还是有解决的方法的，所以建议还是少用。</p>
+</blockquote>
+<h2 id="四、Stateless-Functional-Component"><a href="#四、Stateless-Functional-Component" class="headerlink" title="四、Stateless Functional Component"></a>四、Stateless Functional Component</h2><p>上面提到的方法都包含了内部有交互和状态的复杂的组建，如果组建本身就是用来展示的，那么就可以用stateless的方法来创建组建。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">const Button = (&#123;day,increment&#125;) =&gt; &#123;</div><div class="line">  return (</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;button onClick=&#123;increment&#125;&gt;Today is &#123;day&#125;&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  )</div><div class="line">&#125;</div><div class="line"></div><div class="line">Button.propTypes = &#123;</div><div class="line">  day: PropTypes.string.isRequired,</div><div class="line">  increment: PropTypes.func.isRequired,</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Button;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果像更改显示的结果只能改变传入的props;<br><strong>以上就是四种创建组建的方式，来点个人的建议吧！</strong><br>现在我公司的项目就是采用了第四种方式来进行组建的创建，那么肯定会有人问，那么请求接口，返回数据重新渲染怎么做，肯定还是会有一部分用到es6创建的方法，一部分采用<code>stateless</code>的方法，当然这种也是可以的，不过看起来就会稍微的有些乱，用两种方式定义组建也并不是一个好的团队应该看到的。所以给大家推荐一些<strong><code>react+webpack+react-redux</code></strong> 以及<strong><code>vda</code></strong>这种方式，具体的资料可以参考<a href="https://github.com/dvajs/dva-knowledgemap" target="_blank" rel="external">这个上面说的很详细</a>，这种方式的优点就在于将逻辑和展示完全的分开了。</p>
+</blockquote>
+<p><strong>最后大家可以根据自己的喜欢以及项目的要求选择一种方式来进行组建的创建，方便自己的记忆，也供大家参考使用，同时也来提一下更好的方法。</strong></p>
+<p>参考：<br><a href="http://www.cnblogs.com/Unknw/p/6431375.html" target="_blank" rel="external">http://www.cnblogs.com/Unknw/p/6431375.html</a><br><a href="https://segmentfault.com/a/1190000008715491" target="_blank" rel="external">https://segmentfault.com/a/1190000008715491</a></p>
+
+      
+    </div>
+
+    <div>
+      
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/link/wechat.jpg" alt="Jeremy wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/20/css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jeremy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/superCar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jeremy's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/20/css/" itemprop="url">
-                  HTML+CSS实现我们心爱的大白
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T17:06:04+08:00">
-                2017-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/skill/" itemprop="url" rel="index">
-                    <span itemprop="name">skill</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/REACT/" rel="tag"># REACT</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <h2 id="多的话不说-直接上代码"><a href="#多的话不说-直接上代码" class="headerlink" title="#多的话不说,直接上代码#"></a>#多的话不说,直接上代码#</h2><p>ps:工作之余闲来没事手写了一个，也参考过别人写的大白,作者<a href="http://www.jianshu.com/p/6d3feca2b5f7">小柑</a>;</p>
-<img src="http://oo0r740ex.bkt.clouddn.com/blog/dabai.png" width="344" height="422" title="效果图">
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/20/css/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/react-lifeCycle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jeremy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/superCar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jeremy's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/04/20/css/" rel="prev" title="HTML+CSS实现我们心爱的大白">
+                HTML+CSS实现我们心爱的大白 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/04/13/react-lifeCycle/" itemprop="url">
-                  react-lifeCycle
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T11:19:26+08:00">
-                2017-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/skill/" itemprop="url" rel="index">
-                    <span itemprop="name">skill</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h1><h2 id="先来介绍一下生命周期的定义"><a href="#先来介绍一下生命周期的定义" class="headerlink" title="先来介绍一下生命周期的定义"></a>先来介绍一下生命周期的定义</h2><h2 id="1-componentWillMount"><a href="#1-componentWillMount" class="headerlink" title="1) componentWillMount(){}"></a>1) componentWillMount(){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段 </div><div class="line">// 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用<span class="built_in">set</span>State，</div><div class="line">// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段</div><div class="line">// setTimeout  setInterval   AJAX 在此之行，强烈建议 </div></pre></td></tr></table></figure>
-<h2 id="2-componentDidMount"><a href="#2-componentDidMount" class="headerlink" title="2)componentDidMount(){}"></a>2)componentDidMount(){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段 </div><div class="line">// 调用一次，只在客户端（不在服务器上），在初始渲染发生后立即</div><div class="line">// 子组件的componentDidMount（）方法在父组件的componentDidMount（）方法之前被调用</div><div class="line">// <span class="built_in">set</span>Timeout  <span class="built_in">set</span>Interval   AJAX 在此之行，强烈建议</div></pre></td></tr></table></figure>
-<h2 id="3-componentWillReceiveProps-nextProps"><a href="#3-componentWillReceiveProps-nextProps" class="headerlink" title="3)componentWillReceiveProps(nextProps){}"></a>3)componentWillReceiveProps(nextProps){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Updating 更新阶段</div><div class="line">// 在组件接收新props时调用。初始渲染不调用此方法。</div><div class="line">// 老的props可以用this.props  新值就用nextProps查看</div><div class="line">// 在此函数中调用this.setState（）不会触发附加的渲染。</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/13/react-lifeCycle/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -775,6 +529,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -794,8 +554,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/superCar.png"
@@ -886,6 +655,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、createClass"><span class="nav-number">1.</span> <span class="nav-text">一、createClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、component-es6语法堂"><span class="nav-number">2.</span> <span class="nav-text">二、component es6语法堂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、PureComponet"><span class="nav-number">3.</span> <span class="nav-text">三、PureComponet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Stateless-Functional-Component"><span class="nav-number">4.</span> <span class="nav-text">四、Stateless Functional Component</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1001,6 +786,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
