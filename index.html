@@ -323,6 +323,223 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/Vue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeremy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/superCar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeremy's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/22/Vue/" itemprop="url">
+                  Vue
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T09:59:50+08:00">
+                2017-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/skill/" itemprop="url" rel="index">
+                    <span itemprop="name">skill</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、认识"><a href="#一、认识" class="headerlink" title="一、认识"></a>一、认识</h1><p><code>Vue</code>是目前比较流行了前端框架，<code>git</code>上的<code>start</code>数也是非常的多的<strong>（57.4K）</strong>，接近<code>react</code>的<code>start</code>数了，可以说目前的趋势：前端两大框架“react”和“vue”，自身公司一直是在用<code>react</code>，所以对<code>react</code>有一定的了解，组件化、单项数据流、虚拟<code>Dom</code>等是<code>react</code>的特点，简单的来说一下本公司react的大概架构：<code>webpack+react+redux+redux-form</code>,UI框架用的是<code>antd-design</code>这一套，可以说中等以下的项目这些都能实现的了。那为什么要学习<code>Vue</code>，其实也是出于兴趣，并且公司目前的任务不多，所以就在各种关于前端信息的网站上看到了<code>Vue</code>（ps：其实早就听说过），也看过很多关于对比的文章，这里就不多阐述了，有兴趣的同学可以百度，相信你一定会找到答案的。我想说的就是从<code>react</code>的角度去理解<code>Vue</code>。</p>
+<p>仔细阅读过官网后，做了些小的例子，能看出<code>Vue</code>其实也挺好用的，<code>react</code>有的<code>Vue</code>也有，虚拟<code>dom</code>，虽然说是后加的，但是原理都是相通的，尽可能的去减少<code>dom</code>的操作，而且也不用我们开发者去操心有关<code>dom</code>性能的问题，这些<code>react</code>和Vue都帮助我们操心了，开发者只需要关注业务实现的逻辑。此外生命周期，一开始我以为是<code>react</code>独有的，没想到看到官网的后期，Vue也存在。可能是借鉴的吧！在这里就不多喷了…</p>
+<h2 id="1）下面是有关二者的生命周期："><a href="#1）下面是有关二者的生命周期：" class="headerlink" title=" 1）下面是有关二者的生命周期："></a> 1）下面是有关二者的生命周期：</h2><blockquote>
+<p>Vue的生命周期官网分的比较细致,共有10个,react有7个,你可以根据项目的应用选择需要的生命周期去做相关的操作。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>react</th>
+<th>Vue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>componentWillMount</td>
+<td>beforeCreate </td>
+</tr>
+<tr>
+<td>componentDidMount</td>
+<td>created </td>
+</tr>
+<tr>
+<td>componentWillReceiveProps</td>
+<td>beforeMount</td>
+</tr>
+<tr>
+<td>shouldComponentUpdate</td>
+<td>mounted</td>
+</tr>
+<tr>
+<td>componentWillUpdate</td>
+<td>beforeUpdate</td>
+</tr>
+<tr>
+<td>componentDidUpdate</td>
+<td>updated</td>
+</tr>
+<tr>
+<td>componentWillUnmount</td>
+<td>activated</td>
+</tr>
+<tr>
+<td></td>
+<td>deactivated</td>
+</tr>
+<tr>
+<td></td>
+<td>beforeDestroy</td>
+</tr>
+<tr>
+<td></td>
+<td>destroyed</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>深度了解<code>react</code>的生命周期的可以参考我的 <strong><a href="http://jeremychen.site/2017/04/13/react-lifeCycle/" title="博客" target="_blank" rel="external">这片文章</a></strong><br><code>Vue</code>生命周期各个阶段的解释可以参考 <strong><a href="https://cn.vuejs.org/v2/api/#beforeCreate" title="Vue官网" target="_blank" rel="external">官方文档</a></strong><br>借用一下官方的生命周期图</p>
+</blockquote>
+<p><img src="http://oo0r740ex.bkt.clouddn.com/react.jpg"><br><img src="http://oo0r740ex.bkt.clouddn.com/vuelife.png"></p>
+<h1 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h1><p>二者的语法呢就属于完全不一样了。<br>1）Vue写页面遵循三大块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">	//写html的地方</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	//写js逻辑，vue相关方法，生命周期的位置</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style scoped&gt;</div><div class="line">	//写css或者less等样式   scoped表示样式只在这个文件中起作用，有点类似react中css的模块化的配置一样，只在当前这个模块起作用</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>2）react的语法，大部分用于es6<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Example extends React.Component &#123;</div><div class="line">	constructor(props) &#123;</div><div class="line">		super(props);</div><div class="line">		this.handleBtn = this.handleBtn.bind(this);//事件绑定的this书写在这里</div><div class="line">		this.state = &#123;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">		<span class="built_in">return</span>(</div><div class="line">			&lt;div&gt;</div><div class="line">			example</div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注意的是：react组件的命名需要 <strong>大写字母开头</strong>，vue就不需要</p>
+<blockquote>
+<p>vue给开发者提供了很多的方法，相关类似的－－修饰－－就有很多，而react就需要自己去写，没有修饰！唯一可以做文章的地方就是在props和state上。</p>
+</blockquote>
+<h1 id="三、项目的结构"><a href="#三、项目的结构" class="headerlink" title="三、项目的结构"></a>三、项目的结构</h1><p>从react搭建的项目结构能预测到vue的项目结构，首先打包工具webpack ：这里面就包涵了插件的管理，服务的启动，脚本的命令等等，绝对的开发利器，其次就是router了，路有的管理，react有react-router，那vue就是vue-router,这点都是痛的，第三：状态管理器，react有redux，vue有vuex，但是二者的区别还是挺大的，我学习的时候也花了一点时间。其他的就没有什么了。</p>
+<blockquote>
+<p>总之就是三大块：<strong>打包器＋开发框架＋路由管理＋状态管理器</strong></p>
+</blockquote>
+<p>关于这两个前端框架在我个git上都有相关的项目，有兴趣的同学可以copy下来，学习一下相关的各自的项目搭建，以及差异，这里就不细说了！奉上地址:</p>
+<blockquote>
+<p><strong><a href="https://github.com/jeremyChenMing/example-practice-webpack2" title="git" target="_blank" rel="external">react 项目结构</a></strong><br>或者直接clone  <a href="https://github.com/jeremyChenMing/example-practice-webpack2.git" target="_blank" rel="external">https://github.com/jeremyChenMing/example-practice-webpack2.git</a></p>
+<p><strong><a href="https://github.com/jeremyChenMing/vues" title="git" target="_blank" rel="external">vue 项目结构</a></strong><br>或者直接clone  <a href="https://github.com/jeremyChenMing/vues.git" target="_blank" rel="external">https://github.com/jeremyChenMing/vues.git</a></p>
+</blockquote>
+<h2 id="注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。"><a href="#注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。" class="headerlink" title="注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。"></a>注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。</h2><p>最后如果有什么问题，可以通过这个博客上有的联系方式给我提出问题，或者留言！一般都会在<a href="https://segmentfault.com/u/jeremychen" target="_blank" rel="external">segmentfault</a></p>
+<h2 id="预祝各位以及自己生活愉快，在工作的道路上越走越精！"><a href="#预祝各位以及自己生活愉快，在工作的道路上越走越精！" class="headerlink" title="预祝各位以及自己生活愉快，在工作的道路上越走越精！"></a>预祝各位以及自己生活愉快，在工作的道路上越走越精！</h2>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/26/react/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -611,156 +828,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/react-lifeCycle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jeremy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/superCar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jeremy's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/13/react-lifeCycle/" itemprop="url">
-                  react-lifeCycle
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T11:19:26+08:00">
-                2017-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/skill/" itemprop="url" rel="index">
-                    <span itemprop="name">skill</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h1><h2 id="先来介绍一下生命周期的定义"><a href="#先来介绍一下生命周期的定义" class="headerlink" title="先来介绍一下生命周期的定义"></a>先来介绍一下生命周期的定义</h2><h2 id="1-componentWillMount"><a href="#1-componentWillMount" class="headerlink" title="1) componentWillMount(){}"></a>1) componentWillMount(){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段 </div><div class="line">// 在客户端和服务器上，在初始渲染发生之前立即调用一次 如果在这个方法中调用<span class="built_in">set</span>State，</div><div class="line">// render（）将看到更新的状态，并且只会执行一次，尽管状态改变。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段</div><div class="line">// setTimeout  setInterval   AJAX 在此之行，强烈建议 </div></pre></td></tr></table></figure>
-<h2 id="2-componentDidMount"><a href="#2-componentDidMount" class="headerlink" title="2)componentDidMount(){}"></a>2)componentDidMount(){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Mounting  安装阶段 </div><div class="line">// 调用一次，只在客户端（不在服务器上），在初始渲染发生后立即</div><div class="line">// 子组件的componentDidMount（）方法在父组件的componentDidMount（）方法之前被调用</div><div class="line">// <span class="built_in">set</span>Timeout  <span class="built_in">set</span>Interval   AJAX 在此之行，强烈建议</div></pre></td></tr></table></figure>
-<h2 id="3-componentWillReceiveProps-nextProps"><a href="#3-componentWillReceiveProps-nextProps" class="headerlink" title="3)componentWillReceiveProps(nextProps){}"></a>3)componentWillReceiveProps(nextProps){}</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Updating 更新阶段</div><div class="line">// 在组件接收新props时调用。初始渲染不调用此方法。</div><div class="line">// 老的props可以用this.props  新值就用nextProps查看</div><div class="line">// 在此函数中调用this.setState（）不会触发附加的渲染。</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/13/react-lifeCycle/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -810,7 +877,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -832,7 +899,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

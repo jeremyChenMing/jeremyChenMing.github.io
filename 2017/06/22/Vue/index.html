@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="REACT," />
+  <meta name="keywords" content="Vue," />
 
 
 
@@ -87,17 +87,20 @@
 
 
 
-<meta name="description" content="原由：写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种(createClass, component, PureComponet,Stateless Functional Component)，启发来自于不知的博客呀，有兴趣的人可以去看看他的博客！ 叙述： 我们在用react的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做">
-<meta name="keywords" content="REACT">
+<meta name="description" content="一、认识Vue是目前比较流行了前端框架，git上的start数也是非常的多的（57.4K），接近react的start数了，可以说目前的趋势：前端两大框架“react”和“vue”，自身公司一直是在用react，所以对react有一定的了解，组件化、单项数据流、虚拟Dom等是react的特点，简单的来说一下本公司react的大概架构：webpack+react+redux+redux-form,U">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react创建组建的四种方式">
-<meta property="og:url" content="http://yoursite.com/2017/04/26/react/index.html">
+<meta property="og:title" content="Vue">
+<meta property="og:url" content="http://yoursite.com/2017/06/22/Vue/index.html">
 <meta property="og:site_name" content="Jeremy's blog">
-<meta property="og:description" content="原由：写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种(createClass, component, PureComponet,Stateless Functional Component)，启发来自于不知的博客呀，有兴趣的人可以去看看他的博客！ 叙述： 我们在用react的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做">
-<meta property="og:updated_time" content="2017-04-26T09:41:17.000Z">
+<meta property="og:description" content="一、认识Vue是目前比较流行了前端框架，git上的start数也是非常的多的（57.4K），接近react的start数了，可以说目前的趋势：前端两大框架“react”和“vue”，自身公司一直是在用react，所以对react有一定的了解，组件化、单项数据流、虚拟Dom等是react的特点，简单的来说一下本公司react的大概架构：webpack+react+redux+redux-form,U">
+<meta property="og:image" content="http://oo0r740ex.bkt.clouddn.com/react.jpg">
+<meta property="og:image" content="http://oo0r740ex.bkt.clouddn.com/vuelife.png">
+<meta property="og:updated_time" content="2017-06-22T04:16:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react创建组建的四种方式">
-<meta name="twitter:description" content="原由：写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种(createClass, component, PureComponet,Stateless Functional Component)，启发来自于不知的博客呀，有兴趣的人可以去看看他的博客！ 叙述： 我们在用react的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做">
+<meta name="twitter:title" content="Vue">
+<meta name="twitter:description" content="一、认识Vue是目前比较流行了前端框架，git上的start数也是非常的多的（57.4K），接近react的start数了，可以说目前的趋势：前端两大框架“react”和“vue”，自身公司一直是在用react，所以对react有一定的了解，组件化、单项数据流、虚拟Dom等是react的特点，简单的来说一下本公司react的大概架构：webpack+react+redux+redux-form,U">
+<meta name="twitter:image" content="http://oo0r740ex.bkt.clouddn.com/react.jpg">
 
 
 
@@ -125,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/26/react/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/22/Vue/"/>
 
 
 
 
 
-  <title> react创建组建的四种方式 | Jeremy's blog </title>
+  <title> Vue | Jeremy's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -323,7 +326,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/26/react/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/22/Vue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jeremy">
@@ -344,7 +347,7 @@
             
             
               
-                react创建组建的四种方式
+                Vue
               
             
           </h1>
@@ -359,8 +362,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-26T15:27:45+08:00">
-                2017-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T09:59:50+08:00">
+                2017-06-22
               </time>
             
 
@@ -400,7 +403,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/26/react/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/06/22/Vue/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -427,30 +430,82 @@
       
 
       
-        <p><strong><em>原由：</em></strong>写这篇文章主要是为了增强自己的记忆，同时也是为了分享一下我们常用的创建组建的方法，主要是四种<code>(createClass, component, PureComponet,Stateless Functional Component)</code>，启发来自于<a href="http://www.cnblogs.com/Unknw/p/6431375.html" target="_blank" rel="external">不知</a>的博客呀，有兴趣的人可以去看看他的博客！</p>
-<p><strong><em>叙述：</em></strong> 我们在用<code>react</code>的时候考虑最多的其实就是如何策划组建的划分，组建的嵌套，能够做到更省时、省力。做过了一个<code>react</code>的项目，目前依旧在继续，一上来我们就使用了<code>es6</code>的语法堂，用<code>component</code>来，仔细看过官方文档后，发现不用es6语法的同时只能使用<code>createClass</code>。在写组建的同时我们也都会说到这两个词语，状态组建和<code>pure</code>组建（纯函数）。今天就来大概介绍一下各自的特点：</p>
-<h2 id="一、createClass"><a href="#一、createClass" class="headerlink" title="一、createClass"></a>一、createClass</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">var React = require(&quot;react&quot;);</div><div class="line">var FirstComponent = React.createClass(&#123;</div><div class="line">  propTypes: &#123;</div><div class="line">    name: React.PropTypes.string </div><div class="line">    //属性校验 (string, number, bool, func, array, object...... )</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  getDefaultProps: function() &#123;</div><div class="line">    return &#123;</div><div class="line">      name: &apos;Mary&apos; </div><div class="line">    &#125;;</div><div class="line">    // 初始化props</div><div class="line">  &#125;, </div><div class="line">    </div><div class="line">  getInitialState: function() &#123;</div><div class="line">    return &#123;count: this.props.initialCount&#125;; </div><div class="line">    //初始化props</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  handleClick: function() &#123;</div><div class="line">    //.....</div><div class="line">  &#125;,</div><div class="line">  render: function() &#123;</div><div class="line">    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">module.exports = FirstComponent;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<blockquote>
-<p>这种方式下，组件的<code>props、state</code>等都是以对象<code>object</code>属性的方式组合在一起，在<code>createClass</code>中，<code>React</code>对属性中的所有函数都进行了<code>this</code>绑定，也就是如上面的<code>hanleClick</code>其实相当于<code>handleClick.bind(this)</code> 。</p>
+        <h1 id="一、认识"><a href="#一、认识" class="headerlink" title="一、认识"></a>一、认识</h1><p><code>Vue</code>是目前比较流行了前端框架，<code>git</code>上的<code>start</code>数也是非常的多的<strong>（57.4K）</strong>，接近<code>react</code>的<code>start</code>数了，可以说目前的趋势：前端两大框架“react”和“vue”，自身公司一直是在用<code>react</code>，所以对<code>react</code>有一定的了解，组件化、单项数据流、虚拟<code>Dom</code>等是<code>react</code>的特点，简单的来说一下本公司react的大概架构：<code>webpack+react+redux+redux-form</code>,UI框架用的是<code>antd-design</code>这一套，可以说中等以下的项目这些都能实现的了。那为什么要学习<code>Vue</code>，其实也是出于兴趣，并且公司目前的任务不多，所以就在各种关于前端信息的网站上看到了<code>Vue</code>（ps：其实早就听说过），也看过很多关于对比的文章，这里就不多阐述了，有兴趣的同学可以百度，相信你一定会找到答案的。我想说的就是从<code>react</code>的角度去理解<code>Vue</code>。</p>
+<p>仔细阅读过官网后，做了些小的例子，能看出<code>Vue</code>其实也挺好用的，<code>react</code>有的<code>Vue</code>也有，虚拟<code>dom</code>，虽然说是后加的，但是原理都是相通的，尽可能的去减少<code>dom</code>的操作，而且也不用我们开发者去操心有关<code>dom</code>性能的问题，这些<code>react</code>和Vue都帮助我们操心了，开发者只需要关注业务实现的逻辑。此外生命周期，一开始我以为是<code>react</code>独有的，没想到看到官网的后期，Vue也存在。可能是借鉴的吧！在这里就不多喷了…</p>
+<h2 id="1）下面是有关二者的生命周期："><a href="#1）下面是有关二者的生命周期：" class="headerlink" title=" 1）下面是有关二者的生命周期："></a> 1）下面是有关二者的生命周期：</h2><blockquote>
+<p>Vue的生命周期官网分的比较细致,共有10个,react有7个,你可以根据项目的应用选择需要的生命周期去做相关的操作。</p>
 </blockquote>
-<h2 id="二、component-es6语法堂"><a href="#二、component-es6语法堂" class="headerlink" title="二、component es6语法堂"></a>二、component es6语法堂</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">class FirstComponent extends React.Component &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.handleClick = this.handleClick.bind(this);</div><div class="line">    this.state = &#123;</div><div class="line">       count: props.initialCount</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">  static propTypes ＝ &#123;</div><div class="line">    name: React.PropTypes.string</div><div class="line">  &#125;</div><div class="line">  statice props = &#123;</div><div class="line">    name: &apos;Mary&apos;</div><div class="line">  &#125;</div><div class="line">  handleClick() &#123;</div><div class="line">    //点击事件的处理函数</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render() &#123;</div><div class="line">    return &lt;h1 onClick=&#123;this.handleClick&#125;&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">export default FirstComponent;</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>react</th>
+<th>Vue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>componentWillMount</td>
+<td>beforeCreate </td>
+</tr>
+<tr>
+<td>componentDidMount</td>
+<td>created </td>
+</tr>
+<tr>
+<td>componentWillReceiveProps</td>
+<td>beforeMount</td>
+</tr>
+<tr>
+<td>shouldComponentUpdate</td>
+<td>mounted</td>
+</tr>
+<tr>
+<td>componentWillUpdate</td>
+<td>beforeUpdate</td>
+</tr>
+<tr>
+<td>componentDidUpdate</td>
+<td>updated</td>
+</tr>
+<tr>
+<td>componentWillUnmount</td>
+<td>activated</td>
+</tr>
+<tr>
+<td></td>
+<td>deactivated</td>
+</tr>
+<tr>
+<td></td>
+<td>beforeDestroy</td>
+</tr>
+<tr>
+<td></td>
+<td>destroyed</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>这段代码指定了<code>FirstComponent</code>继承<code>extends React.Component</code>的属性，通过<code>constructor</code>来构函数，初始化<code>state，this</code>的绑定也在这里面进行，因为这种方式<code>react</code>并没有对<code>this</code>进行绑定，所有需要手动输入绑定。这种方法创建组建因为继承了<code>component</code>的属性，因此这里面可以写<code>react</code>的所有生命周期函数,例如<code>componentDidMount</code>等系列，并在函数内容通过<code>this.state</code>来改变状态<code>state</code>，<code>dom</code>就会随即刷新，也可以手动静止更新，具体的细节是在某个生命周期中进行，具体的可以看看我的<a href="https://segmentfault.com/a/1190000008715491" target="_blank" rel="external">这篇文章</a></p>
+<p>深度了解<code>react</code>的生命周期的可以参考我的 <strong><a href="http://jeremychen.site/2017/04/13/react-lifeCycle/" title="博客" target="_blank" rel="external">这片文章</a></strong><br><code>Vue</code>生命周期各个阶段的解释可以参考 <strong><a href="https://cn.vuejs.org/v2/api/#beforeCreate" title="Vue官网" target="_blank" rel="external">官方文档</a></strong><br>借用一下官方的生命周期图</p>
 </blockquote>
-<h2 id="三、PureComponet"><a href="#三、PureComponet" class="headerlink" title="三、PureComponet"></a>三、PureComponet</h2><p>上面的方法中都不是纯函数的构造，因为<code>state</code>是可以在内容起到作用的，内容就可以控制是否重新渲染状态。<br>而这种方法我也很少用过，看过很多文章才明白！其实大多数情况下我们也很难用到这样的方式，在官网的位置都不是很起眼，所以就大概复述一下－不知－博客的内容吧！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class CounterButton extends React.PureComponent &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.state = &#123;count: 1&#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;button</div><div class="line">        color=&#123;this.props.color&#125;</div><div class="line">        onClick=&#123;() =&gt; this.setState(state =&gt; (&#123;count: state.count + 1&#125;))&#125;&gt;</div><div class="line">        Count: &#123;this.state.count&#125;</div><div class="line">      &lt;/button&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oo0r740ex.bkt.clouddn.com/react.jpg"><br><img src="http://oo0r740ex.bkt.clouddn.com/vuelife.png"></p>
+<h1 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h1><p>二者的语法呢就属于完全不一样了。<br>1）Vue写页面遵循三大块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">	//写html的地方</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	//写js逻辑，vue相关方法，生命周期的位置</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style scoped&gt;</div><div class="line">	//写css或者less等样式   scoped表示样式只在这个文件中起作用，有点类似react中css的模块化的配置一样，只在当前这个模块起作用</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>2）react的语法，大部分用于es6<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Example extends React.Component &#123;</div><div class="line">	constructor(props) &#123;</div><div class="line">		super(props);</div><div class="line">		this.handleBtn = this.handleBtn.bind(this);//事件绑定的this书写在这里</div><div class="line">		this.state = &#123;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">		<span class="built_in">return</span>(</div><div class="line">			&lt;div&gt;</div><div class="line">			example</div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注意的是：react组件的命名需要 <strong>大写字母开头</strong>，vue就不需要</p>
 <blockquote>
-<p>大多数情况下， 我们使用<code>PureComponent</code>能够简化我们的代码，并且提高性能，但是PureComponent的自动为我们添加的<code>shouldComponentUpate</code>函数，只是对<code>props</code>和<code>state</code>进行浅比较<code>(shadow comparison)</code>，当<code>props</code>或者<code>state</code>本身是嵌套对象或数组等时，浅比较并不能得到预期的结果，这会导致实际的<code>props</code>和<code>state</code>发生了变化，但组件却没有更新的问题。当然还是有解决的方法的，所以建议还是少用。</p>
+<p>vue给开发者提供了很多的方法，相关类似的－－修饰－－就有很多，而react就需要自己去写，没有修饰！唯一可以做文章的地方就是在props和state上。</p>
 </blockquote>
-<h2 id="四、Stateless-Functional-Component"><a href="#四、Stateless-Functional-Component" class="headerlink" title="四、Stateless Functional Component"></a>四、Stateless Functional Component</h2><p>上面提到的方法都包含了内部有交互和状态的复杂的组建，如果组建本身就是用来展示的，那么就可以用stateless的方法来创建组建。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">const Button = (&#123;day,increment&#125;) =&gt; &#123;</div><div class="line">  return (</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;button onClick=&#123;increment&#125;&gt;Today is &#123;day&#125;&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  )</div><div class="line">&#125;</div><div class="line"></div><div class="line">Button.propTypes = &#123;</div><div class="line">  day: PropTypes.string.isRequired,</div><div class="line">  increment: PropTypes.func.isRequired,</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Button;</div></pre></td></tr></table></figure>
+<h1 id="三、项目的结构"><a href="#三、项目的结构" class="headerlink" title="三、项目的结构"></a>三、项目的结构</h1><p>从react搭建的项目结构能预测到vue的项目结构，首先打包工具webpack ：这里面就包涵了插件的管理，服务的启动，脚本的命令等等，绝对的开发利器，其次就是router了，路有的管理，react有react-router，那vue就是vue-router,这点都是痛的，第三：状态管理器，react有redux，vue有vuex，但是二者的区别还是挺大的，我学习的时候也花了一点时间。其他的就没有什么了。</p>
 <blockquote>
-<p>如果像更改显示的结果只能改变传入的props;<br><strong>以上就是四种创建组建的方式，来点个人的建议吧！</strong><br>现在我公司的项目就是采用了第四种方式来进行组建的创建，那么肯定会有人问，那么请求接口，返回数据重新渲染怎么做，肯定还是会有一部分用到es6创建的方法，一部分采用<code>stateless</code>的方法，当然这种也是可以的，不过看起来就会稍微的有些乱，用两种方式定义组建也并不是一个好的团队应该看到的。所以给大家推荐一些<strong><code>react+webpack+react-redux</code></strong> 以及<strong><code>vda</code></strong>这种方式，具体的资料可以参考<a href="https://github.com/dvajs/dva-knowledgemap" target="_blank" rel="external">这个上面说的很详细</a>，这种方式的优点就在于将逻辑和展示完全的分开了。</p>
+<p>总之就是三大块：<strong>打包器＋开发框架＋路由管理＋状态管理器</strong></p>
 </blockquote>
-<p><strong>最后大家可以根据自己的喜欢以及项目的要求选择一种方式来进行组建的创建，方便自己的记忆，也供大家参考使用，同时也来提一下更好的方法。</strong></p>
-<p>参考：<br><a href="http://www.cnblogs.com/Unknw/p/6431375.html" target="_blank" rel="external">http://www.cnblogs.com/Unknw/p/6431375.html</a><br><a href="https://segmentfault.com/a/1190000008715491" target="_blank" rel="external">https://segmentfault.com/a/1190000008715491</a></p>
-
+<p>关于这两个前端框架在我个git上都有相关的项目，有兴趣的同学可以copy下来，学习一下相关的各自的项目搭建，以及差异，这里就不细说了！奉上地址:</p>
+<blockquote>
+<p><strong><a href="https://github.com/jeremyChenMing/example-practice-webpack2" title="git" target="_blank" rel="external">react 项目结构</a></strong><br>或者直接clone  <a href="https://github.com/jeremyChenMing/example-practice-webpack2.git" target="_blank" rel="external">https://github.com/jeremyChenMing/example-practice-webpack2.git</a></p>
+<p><strong><a href="https://github.com/jeremyChenMing/vues" title="git" target="_blank" rel="external">vue 项目结构</a></strong><br>或者直接clone  <a href="https://github.com/jeremyChenMing/vues.git" target="_blank" rel="external">https://github.com/jeremyChenMing/vues.git</a></p>
+</blockquote>
+<h2 id="注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。"><a href="#注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。" class="headerlink" title="注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。"></a>注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。</h2><p>最后如果有什么问题，可以通过这个博客上有的联系方式给我提出问题，或者留言！一般都会在<a href="https://segmentfault.com/u/jeremychen" target="_blank" rel="external">segmentfault</a></p>
+<h2 id="预祝各位以及自己生活愉快，在工作的道路上越走越精！"><a href="#预祝各位以及自己生活愉快，在工作的道路上越走越精！" class="headerlink" title="预祝各位以及自己生活愉快，在工作的道路上越走越精！"></a>预祝各位以及自己生活愉快，在工作的道路上越走越精！</h2>
       
     </div>
 
@@ -484,7 +539,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/REACT/" rel="tag"># REACT</a>
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
           
         </div>
       
@@ -497,18 +552,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/22/Vue/" rel="next" title="Vue">
-                <i class="fa fa-chevron-left"></i> Vue
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/20/css/" rel="prev" title="HTML+CSS实现我们心爱的大白">
-                HTML+CSS实现我们心爱的大白 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/26/react/" rel="prev" title="react创建组建的四种方式">
+                react创建组建的四种方式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -669,7 +720,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、createClass"><span class="nav-number">1.</span> <span class="nav-text">一、createClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、component-es6语法堂"><span class="nav-number">2.</span> <span class="nav-text">二、component es6语法堂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、PureComponet"><span class="nav-number">3.</span> <span class="nav-text">三、PureComponet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Stateless-Functional-Component"><span class="nav-number">4.</span> <span class="nav-text">四、Stateless Functional Component</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、认识"><span class="nav-number">1.</span> <span class="nav-text">一、认识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1）下面是有关二者的生命周期："><span class="nav-number">1.1.</span> <span class="nav-text"> 1）下面是有关二者的生命周期：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、语法"><span class="nav-number">2.</span> <span class="nav-text">二、语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、项目的结构"><span class="nav-number">3.</span> <span class="nav-text">三、项目的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。"><span class="nav-number">3.1.</span> <span class="nav-text">注：相关项目结构的说明已经在项目中标记了，各位看官应该能明白，其实明白了项目结构，大体也就明白了60％了。文章写的短，精华都在项目里面。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预祝各位以及自己生活愉快，在工作的道路上越走越精！"><span class="nav-number">3.2.</span> <span class="nav-text">预祝各位以及自己生活愉快，在工作的道路上越走越精！</span></a></li></ol></li></ol></div>
             
 
           </div>
