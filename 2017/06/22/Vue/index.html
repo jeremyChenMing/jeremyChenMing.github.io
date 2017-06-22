@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://oo0r740ex.bkt.clouddn.com/logo%20%281%29.png">
 <meta property="og:image" content="http://oo0r740ex.bkt.clouddn.com/react.jpg">
 <meta property="og:image" content="http://oo0r740ex.bkt.clouddn.com/vuelife.png">
-<meta property="og:updated_time" content="2017-06-22T06:34:24.000Z">
+<meta property="og:updated_time" content="2017-06-22T06:38:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue">
 <meta name="twitter:description" content="一、认识Vue是目前比较流行了前端框架，git上的start数也是非常的多的（57.4K），接近react的start数了，可以说目前的趋势：前端两大框架“react”和“vue”，自身公司一直是在用react，所以对react有一定的了解，组件化、单项数据流、虚拟Dom等是react的特点，简单的来说一下本公司react的大概架构：webpack+react+redux+redux-form,">
@@ -493,7 +493,7 @@
 <p><img style="border:none" src="http://oo0r740ex.bkt.clouddn.com/react.jpg"><br>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－<br><img style="border:none" src="http://oo0r740ex.bkt.clouddn.com/vuelife.png"></p>
 <h1 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h1><p>二者的语法呢就属于完全不一样了。<br>1）Vue写页面遵循三大块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">	//写html的地方</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	//写js逻辑，vue相关方法，生命周期的位置</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style scoped&gt;</div><div class="line">	//写css或者less等样式   scoped表示样式只在这个文件中起作用，有点类似react中css的模块化的配置一样，只在当前这个模块起作用</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
 <p>2）react的语法，大部分用于es6<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Example extends React.Component &#123;</div><div class="line">	constructor(props) &#123;</div><div class="line">		super(props);</div><div class="line">		this.handleBtn = this.handleBtn.bind(this);//事件绑定的this书写在这里</div><div class="line">		this.state = &#123;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">		<span class="built_in">return</span>(</div><div class="line">			&lt;div&gt;</div><div class="line">			example</div><div class="line">			&lt;/div&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<div class="note danger"><p>注意的是：react组件的命名需要 <strong>大写字母开头</strong>，vue就不需要</p>
+<div class="note danger"><p>注意的是：react组件的命名需要 <strong>大写字母开头</strong>，vue就不需要,其他的用法也都不同，也没有什么可以比较的，具体的可以参考官网！</p>
 </div>
 <div class="note success"><p>vue给开发者提供了很多的方法，相关类似的－－修饰－－就有很多，而react就需要自己去写，没有修饰！唯一可以做文章的地方就是在props和state上。</p>
 </div>
