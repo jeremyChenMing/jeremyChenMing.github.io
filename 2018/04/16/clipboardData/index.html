@@ -1,0 +1,979 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="clipboardData," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/link/icon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;起因：应项目需求，需要用某个工具截图然后粘贴上传到后台的功能！于是着手搜查资料，最终的结果就是找到了这个对象clipboardData，然后开始着手！ 谷歌chrome浏览器测试(clipboardData)相信这个也是很多开发者都在用的浏览器，当然也是尝试的开始。整个过程是这样的    1）使用微信截图    2）&amp;#39;⌘+v, ctrl+v&amp;#39;在这个页面的随意">
+<meta name="keywords" content="clipboardData">
+<meta property="og:type" content="article">
+<meta property="og:title" content="clipboardData">
+<meta property="og:url" content="http://jeremychen.site/2018/04/16/clipboardData/index.html">
+<meta property="og:site_name" content="Jeremy&#39;s blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;起因：应项目需求，需要用某个工具截图然后粘贴上传到后台的功能！于是着手搜查资料，最终的结果就是找到了这个对象clipboardData，然后开始着手！ 谷歌chrome浏览器测试(clipboardData)相信这个也是很多开发者都在用的浏览器，当然也是尝试的开始。整个过程是这样的    1）使用微信截图    2）&amp;#39;⌘+v, ctrl+v&amp;#39;在这个页面的随意">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-03T08:38:34.241Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="clipboardData">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;起因：应项目需求，需要用某个工具截图然后粘贴上传到后台的功能！于是着手搜查资料，最终的结果就是找到了这个对象clipboardData，然后开始着手！ 谷歌chrome浏览器测试(clipboardData)相信这个也是很多开发者都在用的浏览器，当然也是尝试的开始。整个过程是这样的    1）使用微信截图    2）&amp;#39;⌘+v, ctrl+v&amp;#39;在这个页面的随意">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://jeremychen.site/2018/04/16/clipboardData/"/>
+
+
+
+
+
+  <title> clipboardData | Jeremy's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?140398ebb6cdede010d27241bf615135";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=61687993";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jeremy's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">I am a conqueror</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://jeremychen.site/2018/04/16/clipboardData/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeremy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/superCar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeremy's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                clipboardData
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T11:30:53+08:00">
+                2018-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/skill/" itemprop="url" rel="index">
+                    <span itemprop="name">skill</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2018/04/16/clipboardData/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;起因：应项目需求，需要用某个工具截图然后粘贴上传到后台的功能！于是着手搜查资料，最终的结果就是找到了这个对象<code>clipboardData</code>，然后开始着手！</p>
+<h1 id="谷歌chrome浏览器测试-clipboardData"><a href="#谷歌chrome浏览器测试-clipboardData" class="headerlink" title="谷歌chrome浏览器测试(clipboardData)"></a>谷歌chrome浏览器测试(clipboardData)</h1><p>相信这个也是很多开发者都在用的浏览器，当然也是尝试的开始。整个过程是这样的<br>    1）使用微信截图<br>    2）<code>&#39;⌘+v, ctrl+v&#39;</code>在这个页面的随意位置粘贴<br>    3）执行上传图片到后台的流程(产生loading状态)</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">document.body.addEventListener(&apos;paste&apos;, files, false)</span><br><span class="line">// files是一个方法，里面的参数为event</span><br><span class="line">function files(event) &#123;</span><br><span class="line">    // 谷歌浏览器的的粘贴文件在这个对象下面</span><br><span class="line"></span><br><span class="line">    if (event.clipboardData || event.originalEvent) &#123;</span><br><span class="line">        var clipboardData = (event.clipboardData || event.originalEvent.clipboardData);</span><br><span class="line">        </span><br><span class="line">        // 获取文件的属性就在这里获取，打印该对象可以看到相关属性，结果的操作就在items里面，所以需要循环items</span><br><span class="line">        let fileObj = null;</span><br><span class="line">        for (var i = 0; i &lt; len; i++) &#123;</span><br><span class="line">              // console.log(items[i]);</span><br><span class="line">              if (items[i].type.indexOf(&quot;image&quot;) !== -1) &#123;</span><br><span class="line">                  // getAsFile() 此方法只是该浏览器下才会有的方法 </span><br><span class="line">                  fileObj = items[i].getAsFile();</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        if(fileObj !== null) &#123;</span><br><span class="line">          fileObj就是一个文件对象，此刻就可以进行文件的处理了，例如用formdata的形式传递给后台，这个自行百度，本片章不与讲述。</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="如果需要在页面中显示可以有两种方法显示图片"><a href="#如果需要在页面中显示可以有两种方法显示图片" class="headerlink" title="如果需要在页面中显示可以有两种方法显示图片"></a>如果需要在页面中显示可以有两种方法显示图片</h2><h3 id="第一种：在上面的代码if处接着写"><a href="#第一种：在上面的代码if处接着写" class="headerlink" title="第一种：在上面的代码if处接着写"></a>第一种：在上面的代码if处接着写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">if(fileObj !== null) &#123;</span><br><span class="line">    var fileUrl=URL.createObjectURL(blob); // URL是一个公用的对象</span><br><span class="line">    document.getElementById(&quot;imgNode&quot;).src=fileUrl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二种方法是用base64的方法可以实现，-需要借助FileReader对象"><a href="#第二种方法是用base64的方法可以实现，-需要借助FileReader对象" class="headerlink" title="第二种方法是用base64的方法可以实现， 需要借助FileReader对象"></a>第二种方法是用base64的方法可以实现， 需要借助FileReader对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var reader = new FileReader();</span><br><span class="line">reader.onload = function (event) &#123;</span><br><span class="line">  //event.target.result 即为图片的Base64编码字符串</span><br><span class="line">   var base64_str = event.target.result;</span><br><span class="line">   document.getElementById(&quot;imgNode&quot;).src=base64_str;</span><br><span class="line">&#125;</span><br><span class="line"> reader.readAsDataURL(blob);</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;以上就是在谷歌浏览器中实现的方法了！但是仅限在<code>谷歌浏览器</code>，因为此项目在mac上开发，所以就尝试了在safari中试着运行，结果一点反应都没有，哎，相继查了很多的资料才懂了一点点，这里也就简单的分享下，希望对这一块比较有深入了解的人来评论、指导下我。</p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><p>&emsp;&emsp;document.body下的onpaste不起作用，现在也没有查到，于是乎只能在<code>div(contenteditable)</code>下尝试了一下下。但是发现clipboardData下面并没有items这个对象，所以上面的方法也就不成立了，具体的哪些数据可以参考 <strong><a href="https://segmentfault.com/a/1190000004288686" target="_blank" rel="noopener">这篇文章</a></strong>，上面介绍了他属性的一些要求，所以只能另谋方法了！查阅了好多资料明白了一些！safari粘贴的数据根本就没有存在clipboardData这个对象下，而是在这个div下添加了一个图片，新建了一个img标签，然后src指向本地的 <strong><a href="https://www.cnblogs.com/hhhyaaon/p/5928152.html" target="_blank" rel="noopener">blob链接数据</a></strong>，不信的话你们可以自己打印一下。所以想要获取对象只能这样了，具体代码如下，借助jq</p>
+<h2 id="base64转换为blob对象"><a href="#base64转换为blob对象" class="headerlink" title="base64转换为blob对象"></a>base64转换为blob对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function dataURLtoBlob(dataURL, sliceSize) &#123;</span><br><span class="line">    var b64Data, byteArray, byteArrays, byteCharacters, byteNumbers, contentType, i, m, offset, ref, slice;</span><br><span class="line">    if (sliceSize == null) &#123;</span><br><span class="line">      sliceSize = 512;</span><br><span class="line">    &#125;</span><br><span class="line">    if (!(m = dataURL.match(/^data\:([^\;]+)\;base64\,(.+)$/))) &#123;</span><br><span class="line">      return null;</span><br><span class="line">    &#125;</span><br><span class="line">    ref = m, m = ref[0], contentType = ref[1], b64Data = ref[2];</span><br><span class="line">    byteCharacters = atob(b64Data);</span><br><span class="line">    byteArrays = [];</span><br><span class="line">    offset = 0;</span><br><span class="line">    while (offset &lt; byteCharacters.length) &#123;</span><br><span class="line">      slice = byteCharacters.slice(offset, offset + sliceSize);</span><br><span class="line">      byteNumbers = new Array(slice.length);</span><br><span class="line">      i = 0;</span><br><span class="line">      while (i &lt; slice.length) &#123;</span><br><span class="line">        byteNumbers[i] = slice.charCodeAt(i);</span><br><span class="line">        i++;</span><br><span class="line">      &#125;</span><br><span class="line">      byteArray = new Uint8Array(byteNumbers);</span><br><span class="line">      byteArrays.push(byteArray);</span><br><span class="line">      offset += sliceSize;</span><br><span class="line">    &#125;</span><br><span class="line">    return new Blob(byteArrays, &#123;</span><br><span class="line">      type: contentType</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="base64-转为-文件对象"><a href="#base64-转为-文件对象" class="headerlink" title="base64 转为 文件对象"></a>base64 转为 文件对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function dataURLtoFile(dataurl, filename) &#123;</span><br><span class="line">      var arr = dataurl.split(&apos;,&apos;), mime = arr[0].match(/:(.*?);/)[1],</span><br><span class="line">          bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);</span><br><span class="line">      while(n--)&#123;</span><br><span class="line">          u8arr[n] = bstr.charCodeAt(n);</span><br><span class="line">      &#125;</span><br><span class="line">      return new File([u8arr], filename, &#123;type:mime&#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>##查找浏览器添加的图片标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var _checkImagesInContainer = function(that,cb) &#123;</span><br><span class="line">    var img, j, len, ref, timespan;</span><br><span class="line">    timespan = Math.floor(1000 * Math.random());</span><br><span class="line"></span><br><span class="line">    ref = that.find(&apos;img&apos;);</span><br><span class="line">    for (j = 0, len = ref.length; j &lt; len; j++) &#123;</span><br><span class="line">      img = ref[j];</span><br><span class="line">      img[&quot;_paste_marked_&quot; + timespan] = true;</span><br><span class="line">    &#125;</span><br><span class="line">    return setTimeout((function(_this) &#123;</span><br><span class="line">      return function() &#123;</span><br><span class="line">        var k, len1, ref1;</span><br><span class="line">        ref1 = _this.find(&apos;img&apos;);</span><br><span class="line">        for (k = 0, len1 = ref1.length; k &lt; len1; k++) &#123;</span><br><span class="line">          img = ref1[k];</span><br><span class="line">          if (!img[&quot;_paste_marked_&quot; + timespan]) &#123;</span><br><span class="line">            cb(img.src);</span><br><span class="line">            $(img).remove();</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;)(that), 1);</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>##结果运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">_handleImage = function(src, e, name) &#123;</span><br><span class="line">    var loader;</span><br><span class="line">    loader = new Image();</span><br><span class="line">    loader.crossOrigin = &quot;anonymous&quot;;</span><br><span class="line">    loader.onload = (function(_this) &#123;</span><br><span class="line">      return function() &#123;</span><br><span class="line">        var blob, canvas, ctx, dataURL;</span><br><span class="line">        canvas = document.createElement(&apos;canvas&apos;);</span><br><span class="line">        canvas.width = loader.width;</span><br><span class="line">        canvas.height = loader.height;</span><br><span class="line">        ctx = canvas.getContext(&apos;2d&apos;);</span><br><span class="line">        ctx.drawImage(loader, 0, 0, canvas.width, canvas.height);</span><br><span class="line">        dataURL = null;</span><br><span class="line">        try &#123;</span><br><span class="line">          dataURL = canvas.toDataURL(&apos;image/png&apos;); //使用这个图片的时候需要加入这个属性crossOrigin，因为需要开启允许跨域</span><br><span class="line">          blob = dataURLtoBlob(dataURL);</span><br><span class="line">          console.log(dataURLtoFile(dataURL, &apos;test&apos;))</span><br><span class="line">        &#125; catch (error) &#123;&#125;</span><br><span class="line">        if (dataURL) &#123;</span><br><span class="line">          // _this._target.trigger(&apos;pasteImage&apos;, &#123;</span><br><span class="line">          //   blob: blob,</span><br><span class="line">          //   dataURL: dataURL,</span><br><span class="line">          //   width: loader.width,</span><br><span class="line">          //   height: loader.height,</span><br><span class="line">          //   originalEvent: e,</span><br><span class="line">          //   name: name</span><br><span class="line">          // &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;)(this);</span><br><span class="line">    return loader.src = src;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;div class=&quot;input&quot; contenteditable&gt;&lt;/div&gt;</span><br><span class="line">$(&apos;.input&apos;).on(&apos;paste&apos;, function (event) &#123;</span><br><span class="line">   _checkImagesInContainer($(&apos;.input&apos;), function (src) &#123;</span><br><span class="line">       _handleImage(src, $(&apos;.input&apos;))</span><br><span class="line">   &#125;)</span><br><span class="line">        </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<div class="note danger"><ul>
+<li>补充一些点，最后的方法在单独解释下：<br>找到img标签，那会blob的本地数据，然后用canvas处理得到base64的数据，然后渲染给图片，如果需要文件就需要多走两部，第一步是将dataUrl转换为blob对象，blob在转为文件对象！然后就可以按照自己的习惯(formdata)传递给后台了!</li>
+</ul>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/link/wechat.jpg" alt="Jeremy wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/clipboardData/" rel="tag"># clipboardData</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/22/Vue/" rel="next" title="Vue">
+                <i class="fa fa-chevron-left"></i> Vue
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/superCar.png"
+               alt="Jeremy" />
+          <p class="site-author-name" itemprop="name">Jeremy</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录自己这一路的遇到！</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jeremyChenMing/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5721392726?refer_flag=1001030201_&is_all=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/jeremychen" target="_blank" title="SegmentFault">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  SegmentFault
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+        
+        
+
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#谷歌chrome浏览器测试-clipboardData"><span class="nav-number">1.</span> <span class="nav-text">谷歌chrome浏览器测试(clipboardData)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果需要在页面中显示可以有两种方法显示图片"><span class="nav-number">1.1.</span> <span class="nav-text">如果需要在页面中显示可以有两种方法显示图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种：在上面的代码if处接着写"><span class="nav-number">1.1.1.</span> <span class="nav-text">第一种：在上面的代码if处接着写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种方法是用base64的方法可以实现，-需要借助FileReader对象"><span class="nav-number">1.1.2.</span> <span class="nav-text">第二种方法是用base64的方法可以实现， 需要借助FileReader对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疑问"><span class="nav-number">1.2.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#base64转换为blob对象"><span class="nav-number">1.3.</span> <span class="nav-text">base64转换为blob对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#base64-转为-文件对象"><span class="nav-number">1.4.</span> <span class="nav-text">base64 转为 文件对象</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeremy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "388f449e5f9b4461becfd3a8ed9394c0",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

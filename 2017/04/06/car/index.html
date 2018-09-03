@@ -92,8 +92,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="react+webpack项目常用的插件(plugins)">
 <meta property="og:url" content="http://jeremychen.site/2017/04/06/car/index.html">
-<meta property="og:site_name" content="Jeremy's blog">
+<meta property="og:site_name" content="Jeremy&#39;s blog">
 <meta property="og:description" content="一、HtmlWebpackPlugin使用：1npm install html-webpack-plugin --save-dev 解释：这个插件是简化创建生成html（h5）文件用的，如果你引入的文件带有hash值的话，这个尤为的有用，不需要手动去更改引入的文件名！ 默认生成的是index.html,基本用法为： 123456789var HtmlWebpackPlugin = require(">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-04-19T07:34:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react+webpack项目常用的插件(plugins)">
@@ -427,36 +428,38 @@
       
 
       
-        <h2 id="一、HtmlWebpackPlugin使用："><a href="#一、HtmlWebpackPlugin使用：" class="headerlink" title="一、HtmlWebpackPlugin使用："></a><strong>一、HtmlWebpackPlugin使用：</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install html-webpack-plugin --save-dev</div></pre></td></tr></table></figure>
+        <h2 id="一、HtmlWebpackPlugin使用："><a href="#一、HtmlWebpackPlugin使用：" class="headerlink" title="一、HtmlWebpackPlugin使用："></a><strong>一、HtmlWebpackPlugin使用：</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install html-webpack-plugin --save-dev</span><br></pre></td></tr></table></figure>
 <p>解释：这个插件是简化创建生成html（h5）文件用的，如果你引入的文件带有hash值的话，这个尤为的有用，不需要手动去更改引入的文件名！</p>
 <p>默认生成的是index.html,基本用法为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);</div><div class="line">var webpackConfig = &#123;</div><div class="line">  entry: &apos;index.js&apos;,</div><div class="line">  output: &#123;</div><div class="line">    path: &apos;dist&apos;,</div><div class="line">    filename: &apos;index_bundle.js&apos;</div><div class="line">  &#125;,</div><div class="line">  plugins: [new HtmlWebpackPlugin()]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);</span><br><span class="line">var webpackConfig = &#123;</span><br><span class="line">  entry: &apos;index.js&apos;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: &apos;dist&apos;,</span><br><span class="line">    filename: &apos;index_bundle.js&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [new HtmlWebpackPlugin()]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>js通过script的标签引入到body中！<br>如果你使用了ExtractTextPlugin来提取css，将通过link在head中引入！</p>
 </blockquote>
 <p>一般配置：<br>    title: 用于生成的HTML文档的标题,也就是html，head中<code>&lt;title&gt;ceshi&lt;/title&gt;</code><br>    filename: 生成的文件名，default index.html<br>    template: 模版（填写相对路径，与配置文件的相对路径，例如：’./index.html’<br>    hash: 增加hash值，使每次生成的都是唯一的不重复的</p>
-<h2 id="二、ExtractTextWebpackPlugin-分离我们的样式文件，例如css-sass-less"><a href="#二、ExtractTextWebpackPlugin-分离我们的样式文件，例如css-sass-less" class="headerlink" title="二、ExtractTextWebpackPlugin 分离我们的样式文件，例如css,sass,less"></a><strong>二、ExtractTextWebpackPlugin 分离我们的样式文件，例如css,sass,less</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev extract-text-webpack-plugin</div></pre></td></tr></table></figure>
+<h2 id="二、ExtractTextWebpackPlugin-分离我们的样式文件，例如css-sass-less"><a href="#二、ExtractTextWebpackPlugin-分离我们的样式文件，例如css-sass-less" class="headerlink" title="二、ExtractTextWebpackPlugin 分离我们的样式文件，例如css,sass,less"></a><strong>二、ExtractTextWebpackPlugin 分离我们的样式文件，例如css,sass,less</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev extract-text-webpack-plugin</span><br></pre></td></tr></table></figure>
 <p>基本用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">const ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">        use: ExtractTextPlugin.extract(&#123;</div><div class="line">          fallback: &quot;style-loader&quot;,</div><div class="line">          use: &quot;css-loader&quot;</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    new ExtractTextPlugin(&quot;styles.css&quot;),</div><div class="line">     //输出在根目录上，也可以这样写css/styles.css</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.css$/,</span><br><span class="line">        use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">          fallback: &quot;style-loader&quot;,</span><br><span class="line">          use: &quot;css-loader&quot;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    new ExtractTextPlugin(&quot;styles.css&quot;),</span><br><span class="line">     //输出在根目录上，也可以这样写css/styles.css</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>其中plugins中的参数配置有：（string/object） id: 插件实例的唯一标识，默认情况下是自动生成的，不建议设置<br>filename: 生成文件的名称，可以包含[name], [id] and [contenthash]<br>allChunks：(bollean) 从所有附加块中提取（默认情况下，它仅从初始块中提取）</p>
+</blockquote>
+<blockquote>
 <p>rules里面的参数配置有：（loader | object) options.use :<br>{String}/{Array}/{Object} 使用的编译loader options.fallback :<br>{String}/{Array}/{Object} 当css没有被提取的时候,可以当作保守用 options.publicPath :<br>可以覆盖output里的publickPath</p>
 </blockquote>
 <p>如果想生成多个css文件的话，可以这样写:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">const ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);</div><div class="line"></div><div class="line">const extractCSS = new ExtractTextPlugin(&apos;css/[name]-one.css&apos;);</div><div class="line">const extractLESS = new ExtractTextPlugin(&apos;css/[name]-two.css&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  module: &#123;</div><div class="line">    rules: [</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">        use: extractCSS.extract([ &apos;css-loader&apos;, &apos;postcss-loader&apos; ])</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.less$/i,</div><div class="line">        use: extractLESS.extract([ &apos;css-loader&apos;, &apos;less-loader&apos; ])</div><div class="line">      &#125;,</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    extractCSS,  //两个实例</div><div class="line">    extractLESS</div><div class="line">  ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">const ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);</span><br><span class="line"></span><br><span class="line">const extractCSS = new ExtractTextPlugin(&apos;css/[name]-one.css&apos;);</span><br><span class="line">const extractLESS = new ExtractTextPlugin(&apos;css/[name]-two.css&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.css$/,</span><br><span class="line">        use: extractCSS.extract([ &apos;css-loader&apos;, &apos;postcss-loader&apos; ])</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.less$/i,</span><br><span class="line">        use: extractLESS.extract([ &apos;css-loader&apos;, &apos;less-loader&apos; ])</span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    extractCSS,  //两个实例</span><br><span class="line">    extractLESS</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h2 id="三、DefinePlugin-定义变量"><a href="#三、DefinePlugin-定义变量" class="headerlink" title="三、DefinePlugin 定义变量"></a><strong>三、DefinePlugin 定义变量</strong></h2><p>允许我们创建可在编译时配置的全局常量，这对与需要灵活配置的项目而言非常的重要，举个例子：<br>开发中我们需要devtool来查看redux树中stroe中的变量，但是生产环境中不需要，那么就可以这样定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">const nodeEnv = process.env.NODE_ENV || &apos;development&apos;;</div><div class="line">const isPro = nodeEnv === &apos;production&apos;;</div><div class="line">new webpack.DefinePlugin(&#123;</div><div class="line">    &quot;__dev__&quot;: JSON.stringify(isPro) </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const nodeEnv = process.env.NODE_ENV || &apos;development&apos;;</span><br><span class="line">const isPro = nodeEnv === &apos;production&apos;;</span><br><span class="line">new webpack.DefinePlugin(&#123;</span><br><span class="line">    &quot;__dev__&quot;: JSON.stringify(isPro) </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>那么在开发环境中<strong>dev</strong>为false，<br>打包的时候可以在CLI中输入NODE_ENV=production   这样<strong>dev</strong>就为true;</p>
 <h2 id="四、ProvidePlugin-提供识别码"><a href="#四、ProvidePlugin-提供识别码" class="headerlink" title="四、ProvidePlugin 提供识别码"></a><strong>四、ProvidePlugin 提供识别码</strong></h2><p>通俗点讲就是使用一些字符代替复杂的字符，例如我想用 $ 代表 jquery, 那么就可以使用这个插件，或着我想用 ‘av’ 代表 ‘./ateon/values’ 这个路径，也可以使用这个插件。</p>
 <p>基本用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">new webpack.ProvidePlugin(&#123;</div><div class="line">  $: &apos;jquery&apos;,</div><div class="line">  jQuery: &apos;jquery&apos;,</div><div class="line">  &apos;av&apos; : &apos;./ateon/values&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new webpack.ProvidePlugin(&#123;</span><br><span class="line">  $: &apos;jquery&apos;,</span><br><span class="line">  jQuery: &apos;jquery&apos;,</span><br><span class="line">  &apos;av&apos; : &apos;./ateon/values&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>在模块中使用，<code>import lives from &#39;av&#39; === import lives from &#39;./ateon/values&#39;</code></p>
 <h2 id="五、clean-webpack-plugin-清除你的build目录"><a href="#五、clean-webpack-plugin-清除你的build目录" class="headerlink" title="五、clean-webpack-plugin 清除你的build目录"></a><strong>五、clean-webpack-plugin 清除你的build目录</strong></h2><p>基本用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">const CleanWebpackPlugin = require(&apos;clean-webpack-plugin&apos;)</div><div class="line"></div><div class="line">// webpack config</div><div class="line">&#123;</div><div class="line">  plugins: [</div><div class="line">    new CleanWebpackPlugin(paths [, &#123;options&#125;])</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const CleanWebpackPlugin = require(&apos;clean-webpack-plugin&apos;)</span><br><span class="line"></span><br><span class="line">// webpack config</span><br><span class="line">&#123;</span><br><span class="line">  plugins: [</span><br><span class="line">    new CleanWebpackPlugin(paths [, &#123;options&#125;])</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>[, {options}]为可选参数
 `path` An [array] of string
 options 参数
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">root: __dirname,默认根目录，也就是你的package的路径（绝对路径）</div><div class="line">verbose: true, 在控制台console日志</div><div class="line">dry: false, 默认为false，删除所有的文件， 为true时，模拟删除，并不删除文件</div><div class="line">watch: false, 默认false， 为true时删除所有的编译文件</div><div class="line">exclude: [ &apos;files&apos;, &apos;to&apos;, &apos;ignore&apos; ] </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">root: __dirname,默认根目录，也就是你的package的路径（绝对路径）</span><br><span class="line">verbose: true, 在控制台console日志</span><br><span class="line">dry: false, 默认为false，删除所有的文件， 为true时，模拟删除，并不删除文件</span><br><span class="line">watch: false, 默认false， 为true时删除所有的编译文件</span><br><span class="line">exclude: [ &apos;files&apos;, &apos;to&apos;, &apos;ignore&apos; ] </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一般这一项我们都使用默认值，不去设置，只需要设置path就可以了！</p>
 <p>总结，常用的就是这些了，后续还会在陆续的加入。。。其他相关插件！</p>
 
@@ -506,8 +509,8 @@ options 参数
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/06/imgFIle/" rel="next" title="Code record">
-                <i class="fa fa-chevron-left"></i> Code record
+              <a href="/2017/04/05/my-life/" rel="next" title="记录自己的生活">
+                <i class="fa fa-chevron-left"></i> 记录自己的生活
               </a>
             
           </div>
@@ -516,8 +519,8 @@ options 参数
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/05/my-life/" rel="prev" title="记录自己的生活">
-                记录自己的生活 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/06/imgFIle/" rel="prev" title="Code record">
+                Code record <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -592,7 +595,7 @@ options 参数
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -614,7 +617,7 @@ options 参数
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -704,7 +707,7 @@ options 参数
 <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
